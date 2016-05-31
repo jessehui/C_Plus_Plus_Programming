@@ -408,9 +408,24 @@ int main()
 引用要求对象必须为左值. 
 
 
+###24 运算符
+* 作用域解析`class_name::member`; 全局`::name`
+* 成员选择 `object.member`, `pointer->member`
 
+运算符`,`,`&&(逻辑与)`,`||(逻辑或)`保证了位于它们左边的运算对象一定在右边运算对象之前求值. 例如`b = (a=2,a+1)`将把3赋给b.
+`*p++`的意思是`*(p++)`而不是`(*p)++`
 
+以0结尾的字符串可以用下列方式来复制:
+```C++
+void cpy(char* p, const char *p)
+{
+	while(*p++ = *q++);
+}
 
+char *strcpy(char*, const char*);//来自<string.h>
+
+```
+注:赋值表达式本身是有值的. 例如`x = 5` 这个
 
 
 
